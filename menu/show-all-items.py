@@ -5,7 +5,17 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
-# Objective: Create the Webdriver Instance, Login, Go to /cart Route, then get back to the /inventory Route
+
+"""
+CT.003.001 - Show All Items
+
+Objective:
+As long as the user is logged in
+And be on any of the routes after the 'Login' route
+When the user clicks on the menu
+And in the "All Items" option
+Then the user should be redirected to the 'Inventory' route
+And the system must check whether the URL displayed in the browser matches the expected URL"""
 
 # Prevent Webdriver instance from closing automatically
 options = webdriver.ChromeOptions()
