@@ -47,10 +47,14 @@ time.sleep(1)
 current_url = browser.current_url
 expected_url = 'https://www.saucedemo.com/'
 
-if current_url == expected_url:
-    browser.execute_script("alert('User is not authenticated.')")
-else:
-    browser.execute_script("alert('User is still authenticated.')")
+# Part 4 - Without Assert
+# if current_url == expected_url:
+#     browser.execute_script("alert('User is not authenticated.')")
+# else:
+#     browser.execute_script("alert('User is still authenticated.')")
 
+# Part 4 - With Assert
+assert current_url == expected_url, "User is still authenticated."
 
-
+time.sleep(5)
+browser.quit()

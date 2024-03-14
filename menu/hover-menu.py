@@ -64,3 +64,9 @@ color_after = about_item.value_of_css_property('color')
 
 print(f"Color before hover: {color_before}")
 print(f"Color after hover: {color_after}")
+
+# Part 4 - Verification
+assert color_before != color_after, "Color did not change on hover."
+
+time.sleep(5)
+browser.quit()

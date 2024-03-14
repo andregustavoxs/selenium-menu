@@ -15,7 +15,8 @@ And be on any of the routes after the 'Login' route
 When the user clicks on the menu
 And in the "All Items" option
 Then the user should be redirected to the 'Inventory' route
-And the system must check whether the URL displayed in the browser matches the expected URL"""
+And the system must check whether the URL displayed in the browser matches the expected URL
+"""
 
 # Prevent Webdriver instance from closing automatically
 options = webdriver.ChromeOptions()
@@ -48,11 +49,7 @@ time.sleep(3)
 # Part 4 - Condition of the Route /inventory
 current_url = browser.current_url
 expected_url = 'https://www.saucedemo.com/inventory.html'
+assert current_url == expected_url, "User is not in the correct route."
 
-if current_url == expected_url:
-    browser.execute_script("alert('The user is in the correct route.')")
-else:
-    browser.execute_script("alert('The user is not in the correct route.')")
-
-time.sleep(3)
+time.sleep(5)
 browser.quit()

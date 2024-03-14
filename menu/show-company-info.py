@@ -44,30 +44,50 @@ time.sleep(1)
 # Part 3 - URL Verification
 current_url = browser.current_url
 expected_url = 'https://saucelabs.com/'
+assert current_url == expected_url, "Redirection was a failure."
 
-if current_url == expected_url:
-    browser.execute_script("alert('The redirection to the website was a success')")
-    time.sleep(3)
+# Part 4 - Check the Content (With Assert)
+first_content = browser.find_element(By.CLASS_NAME, 'css-1jgtbl0').text
+second_content = browser.find_element(By.CSS_SELECTOR, '.MuiTypography-root.MuiTypography-h4.css-18w5klh').text
 
-    # Part 4 - Check the Content
-    first_content = browser.find_element(By.CLASS_NAME, 'css-1jgtbl0').text
-    second_content = browser.find_elements(By.CLASS_NAME, 'MuiTypography-h4')
+assert first_content.lower() == 'Sauce Cross-Browser'.lower(), ("Verification of the 'Sauce-Cross Browser' was a failure.")
 
-    if first_content.lower() == 'Sauce Cross-Browser'.lower():
-        browser.execute_script("alert('Verification of the Sauce Cross-Browser was a success.')")
-        time.sleep(3)
-    else:
-        browser.execute_script("alert('Verification of the Sauce Cross-Browser was a failure.')")
-        time.sleep(3)
+assert second_content.lower() == 'Trusted by industry leaders'.lower(), ("Verification of the 'Trusted by industry leaders' was a failure")
 
-    for content in second_content:
-        if content.text.lower() == 'Trusted by industry leaders'.lower():
-            browser.execute_script("alert('Verification of the Trusted by [...] was a success.')")
-            time.sleep(3)
-            break
-        else:
-            browser.execute_script("alert('Verification of the Trusted by [...] was a failure.')")
-            time.sleep(3)
-else:
-    browser.execute_script("alert('The redirection to the website was a failure.')")
-    time.sleep(3)
+time.sleep(5)
+browser.quit()
+
+"""
+When I didn't use assert (commented below), I iterated between the elements of the 'MuiTypography-h4' class, which are just 2:
+- Trusted by industry leaders
+- Deliver quality software continuously
+In this case, in the iteration, I want it to identify only the element with the text "Trusted by industry leaders"
+"""
+
+# Part 4 - Check the Content (Without Assert)
+# if current_url == expected_url:
+#     browser.execute_script("alert('The redirection to the website was a success')")
+#     time.sleep(3)
+#     first_content = browser.find_element(By.CLASS_NAME, 'css-1jgtbl0').text
+#     second_content = browser.find_elements(By.CLASS_NAME, 'MuiTypography-h4')
+#
+#     if first_content.lower() == 'Sauce Cross-Browser'.lower():
+#         browser.execute_script("alert('Verification of the Sauce Cross-Browser was a success.')")
+#         time.sleep(3)
+#     else:
+#         browser.execute_script("alert('Verification of the Sauce Cross-Browser was a failure.')")
+#         time.sleep(3)
+#
+#     for content in second_content:
+#         if content.text.lower() == 'Trusted by industry leaders'.lower():
+#             browser.execute_script("alert('Verification of the Trusted by [...] was a success.')")
+#             time.sleep(3)
+#             break
+#         else:
+#             browser.execute_script("alert('Verification of the Trusted by [...] was a failure.')")
+#             time.sleep(3)
+# else:
+#     browser.execute_script("alert('The redirection to the website was a failure.')")
+#     time.sleep(3)
+
+

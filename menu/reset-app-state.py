@@ -52,16 +52,25 @@ time.sleep(1)
 browser.find_element(By.ID, 'reset_sidebar_link').click()
 time.sleep(1)
 
-# Part 4 - Check if all items were cleared
+# Part 4 - Check if all items were cleared (With Assert)
 try:
     badge = browser.find_element(By.CSS_SELECTOR, 'a.shopping_cart_link span.shopping_cart_badge')
-    if not badge.text:
-        browser.execute_script("alert('Items cleared successfully.')")
-        time.sleep(3)
-    else:
-        browser.execute_script("alert('There are still Items in the cart.')")
-        time.sleep(3)
+    assert not badge.text, "There are still items in the cart."
 except NoSuchElementException:
-    browser.execute_script("alert('Items cleared successfully.')")
-    time.sleep(3)
+    pass
 
+time.sleep(5)
+browser.quit()
+
+# Part 4 - Check if all items were cleared (Without Assert)
+# try:
+#     badge = browser.find_element(By.CSS_SELECTOR, 'a.shopping_cart_link span.shopping_cart_badge')
+#     if not badge.text:
+#         browser.execute_script("alert('Items cleared successfully.')")
+#         time.sleep(3)
+#     else:
+#         browser.execute_script("alert('There are still Items in the cart.')")
+#         time.sleep(3)
+# except NoSuchElementException:
+#     browser.execute_script("alert('Items cleared successfully.')")
+#     time.sleep(3)
