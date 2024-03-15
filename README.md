@@ -18,3 +18,7 @@ Há no total 4 módulos (Menu, Inventory, Carrinho e Login). Cada membro da equi
 - **Inventory**: Lucas Gabriel
 - **Carrinho**: Marcus Fernando 
 - **Login**: Miguel Farias
+
+# Repositórios do Time
+- **Lucas**: https://github.com/LucasGPestana/scenarios-swag-labs/
+- **Marcus**: https://github.com/MarcusFernando/Selenium-cart
