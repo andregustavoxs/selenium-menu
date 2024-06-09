@@ -1,24 +1,22 @@
-# Sistema
-Link: https://www.saucedemo.com/
+# Automatização de Testes com Selenium
 
-# Objetivo
+![Code testing cartoon banner](https://github.com/andregustavoxs/selenium-menu/assets/125318522/3551ec53-9a72-4f1b-8f3e-cdc5b3df13b1)
 
-Trabalho do 5° Período da disciplina de Testes e Qualidade de Software cujo objetivo é realizar uma automatização de teste em um site chamado Sauce Demo utilizando RPAs, como o Selenium.
+## Objetivo
 
-Há no total 4 módulos (Menu, Inventory, Carrinho e Login). Cada membro da equipe terá exatamente 5 cenários, com seus respectivos casos de teste, como proposto pelo professor. 
+O objetivo deste projeto é automatizar testes em um site chamado Sauce Demo utilizando RPAs, como o Selenium. O projeto faz parte do 5° Período da disciplina de Testes e Qualidade de Software. 
 
-# Alunos
-- André Gustavo Xavier dos Santos
-- Lucas Gabriel Pereira Pestana
-- Marcus Fernando Santos Cuba
-- Miguel Farias Ramos Araújo
+O projeto está dividido em 4 módulos:
+1. **Menu**
+2. **Inventário**
+3. **Carrinho**
+4. **Login**
 
-#  Divisão da Equipe
-- **Menu**: André Gustavo
-- **Inventory**: Lucas Gabriel
-- **Carrinho**: Marcus Fernando 
-- **Login**: Miguel Farias
+Cada membro da equipe foi responsável por 5 cenários, com seus respectivos casos de teste, conforme proposto pelo professor.
 
-# Repositórios do Time
-- **Lucas**: https://github.com/LucasGPestana/scenarios-swag-labs/
-- **Marcus**: https://github.com/MarcusFernando/Selenium-cart
+## Alunos
+
+- **André Gustavo Xavier dos Santos**
+- **Lucas Gabriel Pereira Pestana**
+- **Marcus Fernando Santos Cuba**
+- **Miguel Farias Ramos Araújo**  
